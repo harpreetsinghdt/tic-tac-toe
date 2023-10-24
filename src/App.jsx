@@ -159,7 +159,7 @@ export default function Game() {
 		if (sort) {
 			setSort(false);
 			setMoves(moves.reverse());
-			console.log('clicked true', moves);
+			console.log('clicked true here', moves);
 		} else {
 			setSort(true);
 			setMoves(moves.sort());
