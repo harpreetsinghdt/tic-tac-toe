@@ -117,7 +117,7 @@ export default function Game() {
 	const [currentMove, setCurrentMove] = useState(0);
 	const [reset, setReset] = useState(true);
 	const [sort, setSort] = useState(true);
-	const [moves, setMoves] = useState(null);
+	// const [moves, setMoves] = useState(null);
 	const xIsNext = currentMove % 2 === 0;
 	const currentSquares = history[currentMove];
 
@@ -137,7 +137,7 @@ export default function Game() {
 		setHistory([Array(9).fill(null)]);
 	}
 
-	const nmoves = history.map((squares, move) => {
+	const moves = history.map((squares, move) => {
 		let description;
 		if (move > 0) {
 			description = 'Go to move #' + move;
@@ -151,21 +151,21 @@ export default function Game() {
 		);
 	});
 
-	useEffect((nmoves) => {
-		setMoves(nmoves);
-	}, []);
+	// useEffect((nmoves) => {
+	// 	setMoves(nmoves);
+	// }, []);
 
-	const handleToggleMoves = () => {
-		if (sort) {
-			setSort(false);
-			setMoves(moves.reverse());
-			console.log('clicked true here', moves);
-		} else {
-			setSort(true);
-			setMoves(moves.sort());
-			console.log('clicked false', moves);
-		}
-	};
+	// const handleToggleMoves = () => {
+	// 	if (sort) {
+	// 		setSort(false);
+	// 		setMoves(moves.reverse());
+	// 		console.log('clicked true here', moves);
+	// 	} else {
+	// 		setSort(true);
+	// 		setMoves(moves.sort());
+	// 		console.log('clicked false', moves);
+	// 	}
+	// };
 
 	return (
 		<div className='game'>
@@ -177,14 +177,14 @@ export default function Game() {
 				</button>
 			</div>
 			<div className='game-info'>
-				<div className='toggleMoves'>
+				{/* <div className='toggleMoves'>
 					<button
 						onClick={() => {
 							handleToggleMoves();
 						}}>
 						Toggle Move
 					</button>
-				</div>
+				</div> */}
 				<ol>{moves}</ol>
 			</div>
 		</div>
